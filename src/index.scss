@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;900&display=swap');
+html {
+  font-size: 62.5%;
+}
 body {
   margin: 0;
   padding: 0;
   // font-family: 'Nunito', sans-serif;
   font-family: 'Kanit', sans-serif;
   box-sizing: content-box;
+  font-size: 1.6rem;
+}
+
+:root {
+  --color-pink: #d47375;
+  --color-white: #fefeff;
+  --color-light-blue: #d6efff;
+  --color-light-yellow: #fed99b;
+  --color-yellow: #fed18c;
+  --color-black: #000000;
+  
 }

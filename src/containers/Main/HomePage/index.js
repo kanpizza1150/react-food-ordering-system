@@ -1,7 +1,9 @@
 import React, {Component} from 'react'
 // import PropTypes from 'prop-types'
 import Loader from 'react-loader-spinner'
-import {CardWrapper} from './styledComponents'
+import {CardWrapper, HeaderWrapper} from './styledComponents'
+import Typewriter from 'typewriter-effect'
+
 export class HomePage extends Component {
   componentDidMount() {
     this.props.getRestaurantList()
@@ -23,7 +25,7 @@ export class HomePage extends Component {
     lists.sort((a, b) => (a.id > b.id ? 1 : -1))
     let result
     if (lists.length > 0) {
-      result = this._renderList(lists)
+      result = <>{this._renderList(lists)}</>
     } else {
       result = <div>an</div>
     }
@@ -32,10 +34,26 @@ export class HomePage extends Component {
 
   render() {
     const {restaurantList} = this.props
-    return restaurantList.loading ? (
-      <Loader type="Rings" color="#00BFFF" height={80} width={80} />
-    ) : (
-      this._checkHasRestaurant(restaurantList.list.restaurants)
+
+    return (
+      <>
+        <HeaderWrapper>
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .changeDelay(25)
+                .typeString('Hi! Are you hungry?')
+                .pauseFor(1500)
+                .typeString('<br/>Finding something to eat?')
+                .pauseFor(500)
+                .typeString(`<br/><button>explore</button>`)
+                .start()
+            }}
+          />
+        </HeaderWrapper>
+        {!restaurantList.loading &&
+          this._checkHasRestaurant(restaurantList.list.restaurants)}
+      </>
     )
   }
 }
