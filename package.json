@@ -23,8 +23,8 @@
     "styled-components": "^5.1.0"
   },
   "scripts": {
-    "start": "env-cmd -f ./env/.env.developement react-scripts start",
-    "build": "env-cmd -f ./env/.env.production react-scripts build",
+    "start": "env-cmd -f env/.env.developement react-scripts start",
+    "build": "env-cmd -f env/.env.production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
